@@ -1,0 +1,29 @@
+#nav_fixed{
+    background-color: #1976d2;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    box-shadow:4px 4px #fff;
+}
+
+#avatar_discord_nav{
+    height: 100px;
+    border-radius: 100%;
+}
+
+#elemento_meio{
+    align-items: center;
+    display: flex;
+}
+
+.nav_ancora_referencias{
+    margin-left: 15px;
+    margin-right: 5px;
+    color: #b0bec5;
+    text-decoration: none;
+    font-size: 26px;
+}
+

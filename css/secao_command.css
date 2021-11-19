@@ -1,0 +1,72 @@
+#secao_command{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1000px;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+#classe_dos_comandos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #B0C4DE;
+    width: 300px;
+    height: 500px;
+}
+#comandos_file{
+    width: 500px;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    background-color: #B0C4DE;
+}
+#TITLE_COMANDOS{
+    display: inline-block;
+    margin-bottom: 80px;
+}
+#content_elements_command{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 70px;
+}
+.secao_command_btn{
+    width: 180px;
+    height: 40px;
+    font-size: 25px;
+    margin: 7px 0px;
+    background-color: #708090;
+    border: none;
+    box-shadow: 3px 3px #000;
+    color: #F8F8FF;
+    border-radius: 10%;
+}
+.music_command{
+    margin-top: 10px;
+}
+.funny_command{
+    margin-top: 10px;
+}
+.util_command{
+    margin-top: 10px;
+}
+.admin_command{
+    margin-top: 10px;
+}
+.config_command{
+    margin-top: 10px;
+}
+.info_command{
+    margin-top: 10px;
+}
+
+h1{
+    font-size: 70px;
+}
+p{
+    font-size: 20px;
+}
