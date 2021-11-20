@@ -232,6 +232,12 @@ function show_config_command(){
 function show_util_command(){
     verificar_outros_zerados(controle_btn,6)
     one_of_three(6)
+    if(controle_btn[6].state==true){
+        util_btn.style.backgroundColor = "#fff"
+    }
+    else{
+        util_btn.style.backgroundColor = "#000"
+    }
 }
 
 
@@ -284,11 +290,8 @@ function one_of_three(index){
     console.log(controle_btn)
 }
 
-function copyText(){
-    let user_discord_kalebe = "kalebe#2011"
-    var textToCopy = document.getElementById("copyMe");
-    user_discord_kalebe.select();
-    document.execCommand("copy");
-}
 
+function copyText(){
+    alert("HELLo")
+}
 

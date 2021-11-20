@@ -35,33 +35,20 @@
     margin-top: 70px;
 }
 .secao_command_btn{
-    width: 180px;
+    width: 250px;
     height: 40px;
-    font-size: 25px;
+    font-size: 17px;
     margin: 7px 0px;
     background-color: #708090;
     border: none;
     box-shadow: 3px 3px #000;
     color: #F8F8FF;
     border-radius: 10%;
+    font-family: 'Press Start 2P', cursive;
 }
-.music_command{
-    margin-top: 10px;
-}
-.funny_command{
-    margin-top: 10px;
-}
-.util_command{
-    margin-top: 10px;
-}
-.admin_command{
-    margin-top: 10px;
-}
-.config_command{
-    margin-top: 10px;
-}
-.info_command{
-    margin-top: 10px;
+.secao_command_btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 h1{
@@ -71,5 +58,9 @@ p{
     font-size: 20px;
 }
 .lista_comandos{
+    margin-top: 10px;
+}
+.lista_comandos_exibition{
+    font-family: 'Press Start 2P', cursive;
     margin-top: 10px;
 }

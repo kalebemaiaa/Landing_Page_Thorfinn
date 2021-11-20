@@ -12,6 +12,7 @@
 #avatar_discord_nav{
     height: 100px;
     border-radius: 100%;
+    margin-left: 5px;
 }
 #elemento_direita{
     display: flex;
