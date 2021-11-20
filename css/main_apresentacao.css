@@ -7,6 +7,10 @@
 #apresentacao_title{
     width: 50%;
     margin-left: 300px;
+    color: #F8BBD0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 35px;
+    text-shadow: 3px 3px black;
 }
 .main_apresentacao_btn{
     margin-left: 300px;
@@ -14,10 +18,13 @@
     height: 80px;
     width: 200px;
     border: none;
-    background-color: #cfd8dc;
-    box-shadow: 3px 2px #fbe9e7;
-    font-size: 30px;
+    background-color: #FF4081;
+    box-shadow: -5px 4px #F8BBD0;
+    text-shadow: 2px 2px #F8BBD0;
+    font-size: 25px;    
+    font-family: 'Press Start 2P', cursive;
 }
 .main_apresentacao_btn:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }

@@ -284,3 +284,11 @@ function one_of_three(index){
     console.log(controle_btn)
 }
 
+function copyText(){
+    let user_discord_kalebe = "kalebe#2011"
+    var textToCopy = document.getElementById("copyMe");
+    user_discord_kalebe.select();
+    document.execCommand("copy");
+}
+
+
