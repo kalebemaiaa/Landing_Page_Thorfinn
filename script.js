@@ -126,19 +126,7 @@ const commands_list = [
         class_command:"music"
     }
 ]
-
-const admin_btn = document.querySelector("#admin_btn")
-const music_btn =  document.querySelector("#music_btn")
-const funny_btn =  document.querySelector("#funny_btn")
-const info_btn =  document.querySelector("#info_btn")
-const config_btn =  document.querySelector("#config_btn")
-const util_btn =  document.querySelector("#util_btn")
-const all_btn = document.querySelector("#all_btn")
-
 let analisando_state_all = []
-
-const content_commandName = document.querySelector("#comandos_file")
-
 const controle_btn = [
     {
         nome:"all",
@@ -169,27 +157,23 @@ const controle_btn = [
         state:false,
     }
 ]
-    
-const removeChilds = (parent) => {
-    while (parent.lastChild) {
-        parent.removeChild(parent.lastChild);
-    }
-};
+
+const content_commandName = document.querySelector("#comandos_file")
 
 function show_all_commands(){
     verificar_outros_zerados(controle_btn,0)
     if(analisando_state_all.includes(true)==true){
         removeChilds(content_commandName)
         for(i=0;i<controle_btn.length;i++){
-            if(controle_btn[i].nome==controle_btn[0].nome){
-                controle_btn[i].state = true
-            }
-            else{
-                controle_btn[i].state = false
-            }
+            controle_btn[i].state = false
+        }
+        controle_btn[0].state = true
+        for(i=0;i<commands_list.length;i++){
                 const paragrafo = document.createElement('p')
                 paragrafo.textContent = commands_list[i].nome
                 paragrafo.classList.add('lista_comandos_exibition')
+                paragrafo.setAttribute('ID',`commandName_${commands_list[i].nome}`)
+                paragrafo.setAttribute('ID',`commandName_${commands_list[i].nome}`)
                 content_commandName.appendChild(paragrafo)
         }
     }
@@ -200,6 +184,7 @@ function show_all_commands(){
                 const paragrafo = document.createElement('p')
                 paragrafo.textContent = commands_list[i].nome
                 paragrafo.classList.add('lista_comandos_exibition')
+                paragrafo.setAttribute('ID',`commandName_${commands_list[i].nome}`)
                 content_commandName.appendChild(paragrafo)
             }
         }
@@ -232,12 +217,6 @@ function show_config_command(){
 function show_util_command(){
     verificar_outros_zerados(controle_btn,6)
     one_of_three(6)
-    if(controle_btn[6].state==true){
-        util_btn.style.backgroundColor = "#fff"
-    }
-    else{
-        util_btn.style.backgroundColor = "#000"
-    }
 }
 
 
@@ -256,19 +235,18 @@ function one_of_three(index){
     if(analisando_state_all.includes(true)==true){
         removeChilds(content_commandName)
         for(i=0;i<controle_btn.length;i++){
-            if(controle_btn[i].nome==controle_btn[index].nome){
-                controle_btn[i].state = true
-            }
-            else{
-                controle_btn[i].state = false
-            }
-            if(commands_list[i].class_command==controle_btn[index].nome){
-                const paragrafo = document.createElement('p')
-                paragrafo.textContent = commands_list[i].nome
-                paragrafo.classList.add('lista_comandos_exibition')
-                content_commandName.appendChild(paragrafo)
-            }  
+            controle_btn[i].state = false
         }
+        controle_btn[index].state = true
+            for(i=0;i<commands_list.length;i++){
+                if(commands_list[i].class_command==controle_btn[index].nome){
+                    const paragrafo = document.createElement('p')
+                    paragrafo.textContent = commands_list[i].nome
+                    paragrafo.classList.add('lista_comandos_exibition')
+                    paragrafo.setAttribute('ID',`commandName_${commands_list[i].nome}`)
+                    content_commandName.appendChild(paragrafo)
+                }  
+            }
     }
     else{
         if(controle_btn[index].state==false){
@@ -278,6 +256,7 @@ function one_of_three(index){
                     const paragrafo = document.createElement('p')
                     paragrafo.textContent = commands_list[i].nome
                     paragrafo.classList.add('lista_comandos_exibition')
+                    paragrafo.setAttribute('ID',`commandName_${commands_list[i].nome}`)
                     content_commandName.appendChild(paragrafo)
                 }  
             }
@@ -287,11 +266,13 @@ function one_of_three(index){
             removeChilds(content_commandName)
         }
     }
-    console.log(controle_btn)
 }
 
+const removeChilds = (parent) => {
+    while (parent.lastChild) {
+        parent.removeChild(parent.lastChild);
+    }
+};
 
-function copyText(){
-    alert("HELLo")
-}
+
 
