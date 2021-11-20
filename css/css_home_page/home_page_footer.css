@@ -1,5 +1,4 @@
 #main_footer{
-    height: 10px;
     color: #F8BBD0;
     font-family: 'Shalimar', cursive;
 }
@@ -25,6 +24,8 @@
 }
 .img_footer{
     height: 50px;
+    opacity: 0.7;
+    margin-top: 10px;
 }
 #logo_social_media{
     display: flex;
@@ -34,6 +35,7 @@
     margin: auto;
     margin-top: 10px;
 }
-#logo_social_media:hover{
-    cursor: pointer;
+.img_footer:hover{
+    transform: scale(1.1);
+    opacity: 1;
 }

@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Shalimar&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main_style.css">
     <link rel="stylesheet" href="./css/nav_fixed.css">
-    <link rel="stylesheet" href="./css/secao_command.css">
-    <link rel="stylesheet" href="./css/main_footer.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/css_command_page/footer_command_page.css">
+    <link rel="stylesheet" href="./css/css_command_page/secao_command.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favii.ico">
     <title>Commands</title>
 </head>
 <body>
@@ -24,7 +26,16 @@
         </div>
     </nav>
     <section id="secao_command">
-        <h1>COMANDOS</h1>
+        <h1 id="oilinda">COMANDOS</h1>
+        <div id="changing_second">
+            <div id="fix_element_">
+                <p>USAGE:</p>
+                <p class="elemento_baixo">DESCRIPTION:</p>
+            </div>
+            <div id="specific_help">
+
+            </div>
+        </div>
         <div id="content_elements_command">
             <div id="classe_dos_comandos">
                 <button onclick="show_all_commands()" id="all_btn" class="secao_command_btn">All</button>
@@ -35,15 +46,30 @@
                 <button onclick="show_config_command()" id="config_btn" class="secao_command_btn">Config</button>
                 <button onclick="show_util_command()" id="util_btn" class="secao_command_btn">Util</button>
             </div>
-            <div id="comandos_file">
-                
+            <div id="box_box_container">
+                <div id="comandos_file">
+            
+                </div>
+                <div id="arrow_container">
+                    <img id="up_arrow" onclick="up_arrow_function()" src="./img/arrow.png">
+                    <img id="down_arrow" onclick="down_arrow_function()" src="./img/arrow.png">
+                </div>
             </div>
         </div>
     </section>
     <footer id="main_footer">
-        <p>Desenvolvido pelo <a href="">kalebe#1111</a></p>
+        <div id="logo_social_media">
+            <a href="https://www.linkedin.com/in/kalebe-felipe-04a0aa20b/" target="blank"><img class="img_footer" src="./img/220343.png"></a>
+            <a href="https://www.facebook.com/kalebe.felipe.3/" target="blank"><img class="img_footer" src="./img/facebook.png" ></a>
+            <a href="https://www.instagram.com/kalebefs_maia/" target="blank"><img class="img_footer" src="./img/instagram.png" ></a>
+            <a href="https://github.com/kalebemaiaa" target="blank"><img class="img_footer" src="./img/github.png" ></a>
+            <a href="https://twitter.com/kalebe_kkkjjjj" target="blank"><img class="img_footer" src="./img/twitter-sign.png" ></a>
+        </div>
         <div id="linha_footer"></div>
-        <p>© 2021 Thorffin Team </p>
+        <div id="assinatura_footer"> 
+            <p class="footer_paragraph" id="left_element_p">Desenvolvido pelo <a onclick="copyText()">kalebe#2011</a></p>
+            <p class="footer_paragraph" id="right_element_p" >© 2021 Thorffin Team </p>
+        </div>
     <script src="./script.js"></script>
 </body>
 </html>

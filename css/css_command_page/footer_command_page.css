@@ -1,0 +1,42 @@
+#main_footer{
+    color: #000;
+    font-family: 'Shalimar', cursive;
+    background-color: #FF4081;
+}
+#linha_footer::before{
+    content: '';
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #000;
+    margin-top: 10px;
+}
+#assinatura_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin:auto;
+}
+#left_element_p{
+    font-size: 40px;
+}
+#right_element_p{
+    font-size: 30px;
+}
+.img_footer{
+    height: 50px;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+#logo_social_media{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;
+}
+.img_footer:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
