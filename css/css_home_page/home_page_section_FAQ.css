@@ -1,4 +1,28 @@
 #FAQ_section{
     height: 800px;
     background-color: #EC407A;
+    font-family: 'Press Start 2P', cursive;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    
+}
+h2{
+    font-size: 25px;
+    color: #F8F8FF;
+    padding-top: 60px;
+    text-shadow: 2px 2px #311B92;
+}
+.resposta{
+    font-size: 20px;
+    width: 70%;
+    margin-top: 30px;
+    text-shadow: 1px 1px #F8F8FF;
+}
+#div_faq_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
 }

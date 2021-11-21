@@ -1,7 +1,8 @@
 #main_footer{
     color: #000;
-    font-family: 'Shalimar', cursive;
     background-color: #FF4081;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
 }
 #linha_footer::before{
     content: '';
@@ -9,6 +10,7 @@
     width: 100%;
     border-bottom: 2px solid #000;
     margin-top: 10px;
+    margin-bottom: 30px;
 }
 #assinatura_footer{
     display: flex;
@@ -16,12 +18,7 @@
     align-items: center;
     width: 95%;
     margin:auto;
-}
-#left_element_p{
-    font-size: 40px;
-}
-#right_element_p{
-    font-size: 30px;
+    padding-bottom: 20px;
 }
 .img_footer{
     height: 50px;

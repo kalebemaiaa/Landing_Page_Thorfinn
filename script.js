@@ -73,7 +73,7 @@ const commands_list = [
     },
     {
         nome:"8ball",
-        descricao:"A antiga 8ball está aqui para responder suas perguntas",
+        descricao:"A 8ball está aqui para responder suas perguntas",
         show:false,
         help_exibition:false,
         usage:"$8ball [pergunta]",
@@ -144,7 +144,6 @@ const commands_list = [
         class_command:"music"
     }
 ]
-let analisando_state_all = []
 const controle_btn = [
     {
         nome:"all",
@@ -175,14 +174,16 @@ const controle_btn = [
         state:false,
     }
 ]
+let analisando_state_all = []
 
+const specific_help_class = document.getElementById("specific_help")
 const content_commandName = document.querySelector("#comandos_file")
 
 function show_all_commands(){
     verificar_outros_zerados(controle_btn,0)
     if(analisando_state_all.includes(true)==true){
         removeChilds(content_commandName)
-        removeChilds(document.getElementById("specific_help"))
+        removeChilds(specific_help_class)
         for(j=0;j<commands_list.length;j++){
             commands_list[j].help_exibition =false
         }
@@ -213,7 +214,7 @@ function show_all_commands(){
         else{
             controle_btn[0].state = false
             removeChilds(content_commandName)
-            removeChilds(document.getElementById("specific_help"))
+            removeChilds(specific_help_class)
             for(j=0;j<commands_list.length;j++){
                 commands_list[j].help_exibition =false
             }
@@ -221,6 +222,7 @@ function show_all_commands(){
         pixels=0
     }
     atribui_função()
+    change_color_btn(0)
 }
 function show_admin_command(){
     verificar_outros_zerados(controle_btn,1)
@@ -247,22 +249,10 @@ function show_util_command(){
     one_of_three(6)
 }
 
-
-function verificar_outros_zerados(arrayName,index){
-    analisando_state_all.length = 0
-    for(i=0;i<arrayName.length;i++){
-        if(arrayName[i]==arrayName[index]){
-            continue
-        }
-        else{
-            analisando_state_all.push(arrayName[i].state)
-        }
-    }
-}
 function one_of_three(index){
     if(analisando_state_all.includes(true)==true){
         removeChilds(content_commandName)
-        removeChilds(document.getElementById("specific_help"))
+        removeChilds(specific_help_class)
         for(j=0;j<commands_list.length;j++){
             commands_list[j].help_exibition =false
         }
@@ -290,15 +280,13 @@ function one_of_three(index){
                     paragrafo.textContent = commands_list[i].nome
                     paragrafo.classList.add('lista_comandos_exibition')
                     paragrafo.setAttribute('ID',`commandName_${commands_list[i].nome}`)
-
                     content_commandName.appendChild(paragrafo)
                 }  
-                
             }
             pixels=0
         }
         else{
-            removeChilds(document.getElementById("specific_help"))
+            removeChilds(specific_help_class)
             for(j=0;j<commands_list.length;j++){
                 commands_list[j].help_exibition =false
             }
@@ -308,13 +296,20 @@ function one_of_three(index){
         }
     }
     atribui_função()
+    change_color_btn(index)
 }
 
-const removeChilds = (parent) => {
-    while (parent.lastChild) {
-        parent.removeChild(parent.lastChild);
+function verificar_outros_zerados(arrayName,index){
+    analisando_state_all.length = 0
+    for(i=0;i<arrayName.length;i++){
+        if(arrayName[i]==arrayName[index]){
+            continue
+        }
+        else{
+            analisando_state_all.push(arrayName[i].state)
+        }
     }
-};
+}
 
 const atribui_função = ()=>{
     for(i=0;i<document.querySelectorAll(".lista_comandos_exibition").length;i++){
@@ -324,7 +319,7 @@ const atribui_função = ()=>{
             for(i=0;i<commands_list.length;i++){
                 if(commands_list[i].nome==nome_do_comando){
                     if(commands_list[i].help_exibition == false){
-                        removeChilds(document.getElementById("specific_help"))
+                        removeChilds(specific_help_class)
                         for(k=0;k<commands_list.length;k++){
                             commands_list[k].help_exibition = false
                         }
@@ -341,30 +336,39 @@ const atribui_função = ()=>{
     }
 }
 
+function change_color_btn(index){
+    for(i=0;i<controle_btn.length;i++){
+        if(controle_btn[i].nome==controle_btn[index].nome){
+            if(controle_btn[i].state==true){
+                document.querySelector(`#${controle_btn[i].nome}_btn`).style.backgroundColor = "#000"
+                document.querySelector(`#${controle_btn[i].nome}_btn`).style.color = "#FFA500"
+                document.querySelector(`#${controle_btn[i].nome}_btn`).style.boxShadow = "3px 3px #FF4081"
+            }
+            else{
+                document.querySelector(`#${controle_btn[i].nome}_btn`).style.backgroundColor = "#FFA500"
+                document.querySelector(`#${controle_btn[i].nome}_btn`).style.color = "#000"
+                document.querySelector(`#${controle_btn[i].nome}_btn`).style.boxShadow = "3px 3px #F8F8FF"
+            }
+        }
+        else{
+            document.querySelector(`#${controle_btn[i].nome}_btn`).style.backgroundColor = "#FFA500"
+            document.querySelector(`#${controle_btn[i].nome}_btn`).style.color = "#000"
+            document.querySelector(`#${controle_btn[i].nome}_btn`).style.boxShadow = "3px 3px #F8F8FF"
+        }
+    }
+}
+
 function imprimindo_elementos(index){
     const help_description_exibition_paragraph = document.createElement('p')
     const help_usage_exibition_paragraph = document.createElement('p')
-
     help_description_exibition_paragraph.textContent = `${commands_list[index].descricao}`
     help_usage_exibition_paragraph.textContent = `${commands_list[index].usage}`
-
     help_usage_exibition_paragraph.setAttribute('ID',`help_exibition_uso_`)
     help_description_exibition_paragraph.setAttribute('ID',`help_exibition_descricao_`)
-
     help_description_exibition_paragraph.classList.add("elemento_baixo")
-
     document.getElementById("specific_help").appendChild(help_usage_exibition_paragraph)
     document.getElementById("specific_help").appendChild(help_description_exibition_paragraph)
 }
-
-
-
-
-
-
-
-
-
 
 
 //pseudo-carossel
@@ -390,4 +394,11 @@ const up_arrow_function = ()=>{
         }
     }
 }
+
+//copiados
+const removeChilds = (parent) => {
+    while (parent.lastChild) {
+        parent.removeChild(parent.lastChild);
+    }
+};
 
