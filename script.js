@@ -88,14 +88,6 @@ const commands_list = [
         class_command:"funny"
     },
     {
-        nome:"marry",
-        descricao:"se casa com um usuário",
-        show:false,
-        help_exibition:false,
-        usage:"$marry [@user_name]",
-        class_command:"funny"
-    },
-    {
         nome:"chatividade",
         descricao:"muda a atividade do bot",
         show:false,
@@ -109,39 +101,23 @@ const commands_list = [
         show:false,
         help_exibition:false,
         usage:"$help [command_name(opcional)]",
-        class_command:"info"
+        class_command:"util"
     },
     {
-        nome:"avatar",
-        descricao:"Mostrar o avatar do server ou de um usuário que você marcar",
+        nome:"stop",
+        descricao:"Faz o bot parar de tocar musica",
         show:false,
         help_exibition:false,
-        usage:"$avatar [@user_name(opcional)]",
-        class_command:"info"
-    },
-    {
-        nome:"ship",
-        descricao:"Mostra a porcentagem de ship entre você e um usuário",
-        show:false,
-        help_exibition:false,
-        usage:"$ship [@user_name]",
-        class_command:"funny"
-    },
-    {
-        nome:"mute",
-        descricao:"Muta um usuário de determinado canal",
-        show:false,
-        help_exibition:false,
-        usage:"$mute [@user_name]",
-        class_command:"admin"
-    },
-    {
-        nome:"pause",
-        descricao:"Pausa a musica que está tocando",
-        show:false,
-        help_exibition:false,
-        usage:"$pause",
+        usage:"$stop",
         class_command:"music"
+    },
+    {
+        nome:"clear",
+        descricao:"limpa até 100 mensagens do chat",
+        show:false,
+        help_exibition:false,
+        usage:"$clear [number]",
+        class_command:"util"
     }
 ]
 const controle_btn = [
