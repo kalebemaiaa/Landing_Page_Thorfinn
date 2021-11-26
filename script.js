@@ -352,7 +352,7 @@ let pixels=0
 
 const down_arrow_function = ()=>{
     if(document.querySelectorAll(".lista_comandos_exibition").length>=10){
-       if(pixels>(commands_list.length-10)*-30){
+       if(pixels>(commands_list.length)*-30){
             pixels=pixels-40
             for(i=0;i<12;i++){
                 document.querySelectorAll(".lista_comandos_exibition")[i].style=`transform:translateY(${pixels}px)`
